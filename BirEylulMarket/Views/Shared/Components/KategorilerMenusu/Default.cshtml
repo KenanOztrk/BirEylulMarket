@@ -1,0 +1,19 @@
+﻿@model List<Kategori>
+@*https://getbootstrap.com/docs/4.3/components/navbar/*@
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Kategoriler
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" asp-controller="Urunler" asp-action="Index" asp-route-id="">
+            Tüm Ürünler
+        </a>
+        @foreach (Kategori kategori in Model)
+        {
+            <a class="dropdown-item" asp-controller="Urunler" asp-action="Index" asp-route-id="@kategori.Id">
+                @kategori.KategoriAd
+            </a>
+        }
+    </div>
+</li>

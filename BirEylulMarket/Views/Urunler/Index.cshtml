@@ -1,0 +1,25 @@
+﻿@model List<Urun>
+
+<h1>Ürünler</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ürün Ad</th>
+            <th>Birim Fiyatı</th>
+            <th>Kategori</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Urun urun in Model)
+        {
+            <tr>
+                <td>@urun.Id</td>
+                <td>@urun.UrunAd</td>
+                <td>@urun.BirimFiyat.ToString("n2")₺</td>
+                <td>@urun.Kategori.KategoriAd</td>
+            </tr>
+        }
+    </tbody>
+</table>
